@@ -50,12 +50,6 @@ function App() {
       const count = await Deployed.methods.getTokenCount().call();
       const getOwnerBalance = await web3.eth.getBalance(_accounts);
       if (_accounts) setIsLogin(true);
-      // let tokenURI = [];
-      // for (let i = 1; i < 60; i++) {
-      //   let a = await Deployed.methods.tokenURI(i).call();
-      //   tokenURI.push(a);
-      // }
-      // setTokenURI(tokenURI);
       setCA(CA);
       setABI(_abi);
       setDeployed(Deployed);
