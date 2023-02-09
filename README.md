@@ -29,17 +29,18 @@
 ## 목차
 
 
-- [**개요**]()
-- [**사용기술**]()
-  - [메인 페이지](https://github.com/acca3434/MonsterNFT/edit/main/README.md#%EB%A9%94%EC%9D%B8-%ED%8E%98%EC%9D%B4%EC%A7%80)
-  - [메타마스크 연결]()
-  - [로그인 이전 페이지]()
-  - [로그인 후 페이지]()
-  - [마이페이지]()
-  - [유저 NFT개수]()
-  - [판매등록]()
-  - [구매등록]()
-  - [다른 유저 NFT 판매리스트]()
+- [**개요**](https://github.com/acca3434/MonsterNFT#%EA%B0%9C%EC%9A%94)
+- [**사용기술**](https://github.com/acca3434/MonsterNFT#%EC%82%AC%EC%9A%A9-%EA%B8%B0%EC%88%A0)
+  - [메인 페이지](https://github.com/acca3434/MonsterNFT#%EB%A9%94%EC%9D%B8-%ED%8E%98%EC%9D%B4%EC%A7%80)
+  - [메타마스크 연결](https://github.com/acca3434/MonsterNFT#%EB%A9%94%ED%83%80%EB%A7%88%EC%8A%A4%ED%81%AC-%EC%97%B0%EA%B2%B0)
+  - [로그인 이전 페이지](https://github.com/acca3434/MonsterNFT#%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%9D%B4%EC%A0%84-%ED%8E%98%EC%9D%B4%EC%A7%80)
+  - [로그인 후 페이지](https://github.com/acca3434/MonsterNFT#%EB%A1%9C%EA%B7%B8%EC%9D%B8-%ED%9B%84-%ED%8E%98%EC%9D%B4%EC%A7%80)
+  - [마이페이지](https://github.com/acca3434/MonsterNFT#%EB%A7%88%EC%9D%B4-%ED%8E%98%EC%9D%B4%EC%A7%80)
+  - [유저 NFT개수](https://github.com/acca3434/MonsterNFT#%EC%9C%A0%EC%A0%80%EA%B0%80-%EA%B0%80%EC%A7%80%EA%B3%A0-%EC%9E%88%EB%8A%94-nft%EB%AF%BC%ED%8C%85-%EA%B0%9C%EC%88%98%EB%A5%BC-%EB%B3%B4%EC%97%AC%EC%A3%BC%EB%8A%94-%EC%9C%A0%EC%A0%80-%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80)
+  - [판매등록](https://github.com/acca3434/MonsterNFT#%ED%8C%90%EB%A7%A4%EB%93%B1%EB%A1%9D-%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-%EC%BB%A8%ED%8A%B8%EB%9E%99%ED%8A%B8-%EC%BD%94%EB%93%9C)
+  - [구매등록](https://github.com/acca3434/MonsterNFT#%EC%9C%A0%EC%A0%80%EA%B0%80-%EB%8B%A4%EB%A5%B8-%EC%9C%A0%EC%A0%80%EC%9D%98-%ED%86%A0%ED%81%B0%EC%9D%84-%EA%B5%AC%EB%A7%A4%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8F%84%EB%A1%9D-%ED%95%98%EB%8A%94-%EC%BB%A8%ED%8A%B8%EB%9E%99%ED%8A%B8-%EA%B5%AC%ED%98%84)
+  - [다른 유저 NFT 판매리스트](https://github.com/acca3434/MonsterNFT#%EA%B7%B8%EB%A6%AC%EA%B3%A0-%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80%EC%97%90%EC%84%9C-%EC%9C%A0%EC%A0%80%EA%B0%80-%ED%8C%90%EB%A7%A4%ED%95%98%EB%8A%94-%EC%A0%84%EC%B2%B4-%ED%8C%90%EB%A7%A4-%EB%A6%AC%EC%8A%A4%ED%8A%B8-%ED%99%95%EC%9D%B8)
+  - [힘든점 및 이슈발생](https://github.com/acca3434/MonsterNFT#%ED%9E%98%EB%93%A4%EC%97%88%EB%8D%98%EC%A0%90)
 ---
 
 ## **개요**
