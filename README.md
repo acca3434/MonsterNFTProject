@@ -10,19 +10,19 @@
 
 - **스마트 컨트랙트**
 
-  - Solidity언어를 이용한 스마트 컨트랙트 제작
+  - Solidity언어를 이용한 스마트 컨트랙트 제작.
   
-  - ERC721토큰 발급
+  - ERC721토큰 발급.
   
-  - Front View 와 메타마스크 연결작업
+  - Front View 와 메타마스크 연결작업.
 
-  - 1부터 60까지 랜덤으로 민팅하는 기능작성
+  - 1부터 60까지 랜덤으로 민팅하는 기능작성.
 
 - **프론트엔드**
 
-  - 유저가 민팅한 ERC721토큰을 보여주는 마이페이지 제작
+  - 유저가 민팅한 ERC721토큰을 보여주는 마이페이지 제작.
 
-  - Web3.js를 이용한 메타마스크 연결
+  - Web3.js를 이용한 메타 마스크 연결.
 
 ## 목차
 
@@ -179,7 +179,7 @@ const Wheel_Contents_Wrap = styled.div`
 
 ## 메타마스크 연결
 
-- Wallet connect버튼 클릭씨 메타마스크가 반응하여 계정 연결할 수 있는 상호작용 구현
+- Wallet connect 버튼 클릭 씨 메타 마스크가 반응하여 계정 연결할 수 있는 상호작용 구현
 
 ```JavaScript
   const login = async () => {
@@ -216,9 +216,9 @@ const Wheel_Contents_Wrap = styled.div`
 
 ### 로그인 이전 페이지
 
-- 민팅하기전 유저가 메타마스크에 연결을 권장하도록 유도.
+- 미팅하기 전 유저가 메타 마스크에 연결을 권장하도록 유도.
 
-- 로그인이 완료되면 MintingGo라는 버튼이 노출됌.
+- 로그인이 완료되면 MintingGo 버튼이 노출됨.
 
 ```JSX
   return (
@@ -261,7 +261,7 @@ const Wheel_Contents_Wrap = styled.div`
 
 ### 로그인 후 페이지
 
-- mintingGO버튼을 누르면 1부터 60가지의 NFT몬스터를 랜덤으로 발급.
+- mintingGO 버튼을 누르면 1부터 60가지의 NFT 몬스터를 랜덤으로 발급.
 
 ```Solidity        function mintToken() public payable {
         require(
@@ -275,7 +275,7 @@ const Wheel_Contents_Wrap = styled.div`
             MAX_TOKEN_COUNT > totalSupply(),
             "You've exceeded the value that you can mint per day"
         );
-        // 유저마다 3개씩만 발급 받을 수 있게 차단
+        // 유저마다 3개씩만 발급받을 수 있게 차단
         require(buyer[msg.sender] < 3, "limit Excess");
         // uint256 total = totalSupply() +1;
         // uint256 tokenId = uint256(keccak256(abi.encodePacked(msg.sender,total,block.timestamp))) % 60;
@@ -297,7 +297,7 @@ const Wheel_Contents_Wrap = styled.div`
 
 ## 마이 페이지
 
-### 유저가 가지고 있는 NFT민팅 개수를 보여주는 유저 마이페이지.
+### 유저가 가지고 있는 NFT 민팅 개수를 보여주는 유저 마이페이지.
 
 ```Solidity
     // 소유하고 있는 NFT 리스트 view 함수
@@ -325,7 +325,7 @@ const Wheel_Contents_Wrap = styled.div`
     }
 ```
 
-### 판매등록 할 수 있는 컨트랙트 코드.
+### 판매 등록할 수 있는 컨트랙트 코드.
 
 ```Solidity
     // 판매 등록 함수
@@ -371,7 +371,7 @@ const Wheel_Contents_Wrap = styled.div`
         // 판매자가 자신의 토큰을 구매하지 못하게
         require(tokenOwner != msg.sender);
 
-        // 판매중인 토큰만 구매할 수 있도록 판매중인지 체크(tokenPrices에서 토큰아이디에 해당하는 가격이 0 이상이면 판매로 등록되있다고 판단)
+        // 판매 중인 토큰만 구매할 수 있도록 판매 중인지 체크(tokenPrices에서 토큰 아이디에 해당하는 가격이 0 이상이면 판매로 등록돼있다고 판단)
         require(tokenPrices[_tokenId].price > 0);
 
         // 구매자가 지불한 ㅣㅇ더가 판매 가격 이상인지 체크
@@ -390,7 +390,7 @@ const Wheel_Contents_Wrap = styled.div`
 
 ```
 
-### 그리고 마이페이지에서 유저가 판매하는 전체 판매 리스트 확인.
+### 마이페이지에서 유저가 판매하는 전체 판매 리스트 확인.
 
 ```Solidity
     // 전체 판매 리스트 확인, 전체 확인은 view를 사용해야 한다.
@@ -428,9 +428,9 @@ const Wheel_Contents_Wrap = styled.div`
 
 ## 힘들었던점
 
-- 메타마스크 연결(goerli)truffle-config.js의 설정 자체에서 시간분배 조절 실패.
+- 메타 마스크 연결(goerli) truffle-config.js의 설정 자체에서 시간분배 조절 실패.
   
-  - 배포 단계까지는 설정완료.
+  - 배포 단계까지는 설정 완료.
   
   ```JavaScript
       goerli: {
@@ -445,28 +445,28 @@ const Wheel_Contents_Wrap = styled.div`
       },
   ```
   
-- 특정 testnet(goerli)에서만 메타마스크 연결에서 시간 분배 실패.
+- 특정 testnet(goerli)에서만 메타 마스크 연결에서 시간 분배 실패.
 
-  - 배포 단계까지는 설정완료.
+  - 배포 단계까지는 설정 완료.
 
-- 유저마다 3개씩 발행되게 컨트랙트를 구현해놨음
+- 유저마다 3개씩 발행되게 컨트랙트를 구현.
 
   ```Solidity
     // 유저마다 3개씩만 발급 받을 수 있게 차단
     require(buyer[msg.sender] < 3, "limit Excess");
   ```
   
-  - 무슨 이유에선지 3개 차단은 되지만 다른 특정한 유저가 구매가 안돼는 이슈가 발생.
+  - 무슨 이유에선지 3개 차단은 되지만 다른 특정한 유저가 구매가 안되는 이슈가 발생.
   
-  - 사용자 전체가 발급이 불가한것은 아님.
+  - 사용자 전체가 발급이 불가한 것은 아님.
   
-  - 파악후 해결하겠음.
+  - 파악 후 해결하겠음.
   
 - 프런트엔드 쪽 기능 부실.
 
-  - 전체적으로 NFT를 제외한다면 노출돼는 재미가 감소.
+  - 전체적으로 NFT를 제외한다면 노출되는 재미가 감소.
   
-  - 따라서 사용자의 흥미를 이끌 수 없게됌.
+  - 따라서 사용자의 흥미를 이끌 수 없게 됨.
   
   - 추후에 보완하여 프런트엔드 영역 확장하겠음
 
