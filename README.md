@@ -21,8 +21,6 @@
 - **프론트엔드**
 
   - 유저가 민팅한 ERC721토큰을 보여주는 마이페이지 제작
-  
-  - three.js를 이용한 토큰페이지 제작
 
   - Web3.js를 이용한 메타마스크 연결
 
@@ -45,7 +43,7 @@
 
 ## **개요**
 
-### **Scripts**
+### **실행 순서**
 
 #### client
 
@@ -263,7 +261,7 @@ const Wheel_Contents_Wrap = styled.div`
 
 ### 로그인 후 페이지
 
-- mintingGO버튼을 누르면 1부터 60가지의 NFT몬스터를 랜덤으로 발급받는다.
+- mintingGO버튼을 누르면 1부터 60가지의 NFT몬스터를 랜덤으로 발급.
 
 ```Solidity        function mintToken() public payable {
         require(
@@ -299,7 +297,7 @@ const Wheel_Contents_Wrap = styled.div`
 
 ## 마이 페이지
 
-### 유저가 가지고 있는 NFT민팅 개수를 보여주는 유저 마이페이지
+### 유저가 가지고 있는 NFT민팅 개수를 보여주는 유저 마이페이지.
 
 ```Solidity
     // 소유하고 있는 NFT 리스트 view 함수
@@ -327,7 +325,7 @@ const Wheel_Contents_Wrap = styled.div`
     }
 ```
 
-### 판매등록 할 수 있는 컨트랙트 코드
+### 판매등록 할 수 있는 컨트랙트 코드.
 
 ```Solidity
     // 판매 등록 함수
@@ -361,7 +359,7 @@ const Wheel_Contents_Wrap = styled.div`
     }
 ```
 
-### 유저가 다른 유저의 토큰을 구매할 수 있도록 하는 컨트랙트 구현
+### 유저가 다른 유저의 토큰을 구매할 수 있도록 하는 컨트랙트 구현.
 
 ```Solidity
 
@@ -392,7 +390,7 @@ const Wheel_Contents_Wrap = styled.div`
 
 ```
 
-### 그리고 마이페이지에서 유저가 판매하는 전체 판매 리스트 확인
+### 그리고 마이페이지에서 유저가 판매하는 전체 판매 리스트 확인.
 
 ```Solidity
     // 전체 판매 리스트 확인, 전체 확인은 view를 사용해야 한다.
@@ -447,7 +445,7 @@ const Wheel_Contents_Wrap = styled.div`
       },
   ```
   
-- 특정 testnet(goerli)에서만 메타마스크 연결에서 시간 분배 실패
+- 특정 testnet(goerli)에서만 메타마스크 연결에서 시간 분배 실패.
 
   - 배포 단계까지는 설정완료.
 
@@ -458,9 +456,9 @@ const Wheel_Contents_Wrap = styled.div`
     require(buyer[msg.sender] < 3, "limit Excess");
   ```
   
-  - 무슨 이유에선지 3개 차단은 되지만 다른 특정한 유저가 구매가 안돼는 이슈가 발생
+  - 무슨 이유에선지 3개 차단은 되지만 다른 특정한 유저가 구매가 안돼는 이슈가 발생.
   
-  - 파악후 해결하겠음
+  - 파악후 해결하겠음.
 
 
 
