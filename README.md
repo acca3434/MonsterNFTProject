@@ -430,18 +430,37 @@ const Wheel_Contents_Wrap = styled.div`
 
 ## 힘들었던점
 
-- 메타마스크 연결(goerli)truffle-config.js의 설정 자체가 어려웠음.
+- 메타마스크 연결(goerli)truffle-config.js의 설정 자체에서 시간분배 조절 실패.
+  
+  - 배포 단계까지는 설정완료.
+  
+  ```JavaScript
+      goerli: {
+        provider: () =>
+          new HDWalletProvider({
+            mnemonic: {
+              phrase: MNEMONIC,
+            },
+            providerOrUrl: INFURA_API_KEY,
+          }),
+        network_id: 5,
+      },
+  ```
+  
+- 특정 testnet(goerli)에서만 메타마스크 연결에서 시간 분배 실패
+
+  - 배포 단계까지는 설정완료.
 
 - 유저마다 3개씩 발행되게 컨트랙트를 구현해놨음
 
-```Solidity
+  ```Solidity
     // 유저마다 3개씩만 발급 받을 수 있게 차단
     require(buyer[msg.sender] < 3, "limit Excess");
-```
-
-- 무슨 이유에선지 3개 차단은 되지만 다른 특정한 유저가 구매가 안돼는 이슈가 발생
-
-- 파악후 해결하겠음
+  ```
+  
+  - 무슨 이유에선지 3개 차단은 되지만 다른 특정한 유저가 구매가 안돼는 이슈가 발생
+  
+  - 파악후 해결하겠음
 
 
 
