@@ -40,7 +40,7 @@
   - [판매등록](https://github.com/acca3434/MonsterNFT#%ED%8C%90%EB%A7%A4%EB%93%B1%EB%A1%9D-%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-%EC%BB%A8%ED%8A%B8%EB%9E%99%ED%8A%B8-%EC%BD%94%EB%93%9C)
   - [구매등록](https://github.com/acca3434/MonsterNFT#%EC%9C%A0%EC%A0%80%EA%B0%80-%EB%8B%A4%EB%A5%B8-%EC%9C%A0%EC%A0%80%EC%9D%98-%ED%86%A0%ED%81%B0%EC%9D%84-%EA%B5%AC%EB%A7%A4%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8F%84%EB%A1%9D-%ED%95%98%EB%8A%94-%EC%BB%A8%ED%8A%B8%EB%9E%99%ED%8A%B8-%EA%B5%AC%ED%98%84)
   - [다른 유저 NFT 판매리스트](https://github.com/acca3434/MonsterNFT#%EA%B7%B8%EB%A6%AC%EA%B3%A0-%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80%EC%97%90%EC%84%9C-%EC%9C%A0%EC%A0%80%EA%B0%80-%ED%8C%90%EB%A7%A4%ED%95%98%EB%8A%94-%EC%A0%84%EC%B2%B4-%ED%8C%90%EB%A7%A4-%EB%A6%AC%EC%8A%A4%ED%8A%B8-%ED%99%95%EC%9D%B8)
-  - [힘든점 및 이슈발생](https://github.com/acca3434/MonsterNFT#%ED%9E%98%EB%93%A4%EC%97%88%EB%8D%98%EC%A0%90)
+- [힘든점 및 이슈발생](https://github.com/acca3434/MonsterNFT#%ED%9E%98%EB%93%A4%EC%97%88%EB%8D%98%EC%A0%90)
 ---
 
 ## **개요**
@@ -69,6 +69,111 @@ npm start
 ---
 
 ## 메인 페이지
+
+- 자동으로 슬라이드가 넘어가는 형식
+
+- styled-component를 사용
+
+```JavaScript
+const Main = ({}) => {
+  const scrollRef = useSlideScroll();
+
+  const rendering = () => {
+    const result = [];
+    for (let i = 1; i < 60; i++) {
+      result.push(
+        <Main_New_li>
+          <Main_Contents_Img
+            src={`https://gateway.pinata.cloud/ipfs/QmaSHzGMtmQttk7gjdwUoCzvRDkqnA7TaYkmfZMYxErQDs/${i}.png`}
+          />
+        </Main_New_li>
+      );
+    }
+    return result;
+  };
+
+  return (
+    <Main_wrap>
+      <Main_contents_wrap>
+        <h1>OUR MONSTER!!</h1>
+        <Main_New>
+          <Main_New_ul ref={scrollRef}>{rendering()}</Main_New_ul>
+        </Main_New>
+      </Main_contents_wrap>
+    </Main_wrap>
+  );
+};
+```
+
+```CSS
+const Main_wrap = styled.div`
+  width: calc(100% - 150px);
+  height: 100%;
+  margin-top: 50px;
+  padding-left: 150px;
+  // border: 1px solid pink;
+`;
+
+const Main_contents_wrap = styled.div`
+  width: calc(100% - 150px);
+  // border: 1px solid yellow;
+  /* overflow: hidden; */
+`;
+
+const Main_New = styled.div``;
+
+const Main_New_ul = styled.ul`
+  white-space: nowrap;
+  overflow: scroll;
+  width: 100%;
+  overflow-y: hidden;
+  padding: 0;
+  ::-webkit-scrollbar {
+    height: 8px;
+    background: #ebff82;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: radial-gradient(#f64435, #ffe498);
+    border-radius: 5px;
+  }
+`;
+
+const Main_New_li = styled.li`
+  list-style: none;
+  width: 250px;
+  height: 250px;
+  margin: 20px;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 18px;
+  animation: gogo 100s linear infinite;
+  @keyframes gogo {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-10000px);
+    }
+  }
+`;
+
+const Main_Contents_Img = styled.img`
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  :hover {
+    transform: scale(1.2);
+    transition: 1s;
+  }
+`;
+
+const Wheel_Contents_Wrap = styled.div`
+  width: 100px;
+  height: 100px;
+  border: 1px solid green;
+`;
+
+```
 
 <br/>
 
