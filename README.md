@@ -4,27 +4,29 @@
 
 ### 기간 : 2022.12.20 ~ 2022.12.27
 
-### 개발자 : 주병현
+### 개발자 : 주병현,송화영,김경환
 
 ### 본인 역할
 
 - **스마트 컨트랙트**
 
-  - Solidity언어를 이용한 스마트 컨트랙트 제작
+  - Solidity언어를 이용한 스마트 컨트랙트 제작.
   
-  - ERC721토큰 발급
+  - ERC721토큰 발급.
   
-  - Front View 와 메타마스크 연결작업
+  - Front View 와 메타마스크 연결작업.
 
-  - 1부터 60까지 랜덤으로 민팅하는 기능작성
+  - 1부터 60까지 랜덤으로 민팅하는 기능작성.
+  
+  - 캐릭터 디자인 및 pinata를 이용한 이미지 메타데이터 생성
+  
+    - https://drive.google.com/drive/folders/1kXBw4_PiOE782xRcGMgqyrP3KLNqrxb1
 
 - **프론트엔드**
 
-  - 유저가 민팅한 ERC721토큰을 보여주는 마이페이지 제작
-  
-  - three.js를 이용한 토큰페이지 제작
+  - 유저가 민팅한 ERC721토큰을 보여주는 마이페이지 제작.
 
-  - Web3.js를 이용한 메타마스크 연결
+  - Web3.js를 이용한 메타 마스크 연결.
 
 ## 목차
 
@@ -40,12 +42,12 @@
   - [판매등록](https://github.com/acca3434/MonsterNFT#%ED%8C%90%EB%A7%A4%EB%93%B1%EB%A1%9D-%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-%EC%BB%A8%ED%8A%B8%EB%9E%99%ED%8A%B8-%EC%BD%94%EB%93%9C)
   - [구매등록](https://github.com/acca3434/MonsterNFT#%EC%9C%A0%EC%A0%80%EA%B0%80-%EB%8B%A4%EB%A5%B8-%EC%9C%A0%EC%A0%80%EC%9D%98-%ED%86%A0%ED%81%B0%EC%9D%84-%EA%B5%AC%EB%A7%A4%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8F%84%EB%A1%9D-%ED%95%98%EB%8A%94-%EC%BB%A8%ED%8A%B8%EB%9E%99%ED%8A%B8-%EA%B5%AC%ED%98%84)
   - [다른 유저 NFT 판매리스트](https://github.com/acca3434/MonsterNFT#%EA%B7%B8%EB%A6%AC%EA%B3%A0-%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80%EC%97%90%EC%84%9C-%EC%9C%A0%EC%A0%80%EA%B0%80-%ED%8C%90%EB%A7%A4%ED%95%98%EB%8A%94-%EC%A0%84%EC%B2%B4-%ED%8C%90%EB%A7%A4-%EB%A6%AC%EC%8A%A4%ED%8A%B8-%ED%99%95%EC%9D%B8)
-- [힘든점 및 이슈발생](https://github.com/acca3434/MonsterNFT#%ED%9E%98%EB%93%A4%EC%97%88%EB%8D%98%EC%A0%90)
+- [이슈발생](https://github.com/acca3434/MonsterNFT#%ED%9E%98%EB%93%A4%EC%97%88%EB%8D%98%EC%A0%90)
 ---
 
 ## **개요**
 
-### **Scripts**
+### **실행 순서**
 
 #### client
 
@@ -181,7 +183,7 @@ const Wheel_Contents_Wrap = styled.div`
 
 ## 메타마스크 연결
 
-- Wallet connect버튼 클릭씨 메타마스크가 반응하여 계정 연결할 수 있는 상호작용 구현
+- Wallet connect 버튼 클릭 씨 메타 마스크가 반응하여 계정 연결할 수 있는 상호작용 구현
 
 ```JavaScript
   const login = async () => {
@@ -218,9 +220,9 @@ const Wheel_Contents_Wrap = styled.div`
 
 ### 로그인 이전 페이지
 
-- 민팅하기전 유저가 메타마스크에 연결을 권장하는것
+- 미팅하기 전 유저가 메타 마스크에 연결을 권장하도록 유도.
 
-- 로그인이 완료되면 MintingGo라는 버튼이 노출된다
+- 로그인이 완료되면 MintingGo 버튼이 노출됨.
 
 ```JSX
   return (
@@ -263,7 +265,7 @@ const Wheel_Contents_Wrap = styled.div`
 
 ### 로그인 후 페이지
 
-- mintingGO버튼을 누르면 1부터 60가지의 NFT몬스터를 랜덤으로 발급받는다.
+- mintingGO 버튼을 누르면 1부터 60가지의 NFT 몬스터를 랜덤으로 발급.
 
 ```Solidity        function mintToken() public payable {
         require(
@@ -277,7 +279,7 @@ const Wheel_Contents_Wrap = styled.div`
             MAX_TOKEN_COUNT > totalSupply(),
             "You've exceeded the value that you can mint per day"
         );
-        // 유저마다 3개씩만 발급 받을 수 있게 차단
+        // 유저마다 3개씩만 발급받을 수 있게 차단
         require(buyer[msg.sender] < 3, "limit Excess");
         // uint256 total = totalSupply() +1;
         // uint256 tokenId = uint256(keccak256(abi.encodePacked(msg.sender,total,block.timestamp))) % 60;
@@ -299,7 +301,7 @@ const Wheel_Contents_Wrap = styled.div`
 
 ## 마이 페이지
 
-### 유저가 가지고 있는 NFT민팅 개수를 보여주는 유저 마이페이지
+### 유저가 가지고 있는 NFT 민팅 개수를 보여주는 유저 마이페이지.
 
 ```Solidity
     // 소유하고 있는 NFT 리스트 view 함수
@@ -327,7 +329,7 @@ const Wheel_Contents_Wrap = styled.div`
     }
 ```
 
-### 판매등록 할 수 있는 컨트랙트 코드
+### 판매 등록할 수 있는 컨트랙트 코드.
 
 ```Solidity
     // 판매 등록 함수
@@ -361,7 +363,7 @@ const Wheel_Contents_Wrap = styled.div`
     }
 ```
 
-### 유저가 다른 유저의 토큰을 구매할 수 있도록 하는 컨트랙트 구현
+### 유저가 다른 유저의 토큰을 구매할 수 있도록 하는 컨트랙트 구현.
 
 ```Solidity
 
@@ -373,7 +375,7 @@ const Wheel_Contents_Wrap = styled.div`
         // 판매자가 자신의 토큰을 구매하지 못하게
         require(tokenOwner != msg.sender);
 
-        // 판매중인 토큰만 구매할 수 있도록 판매중인지 체크(tokenPrices에서 토큰아이디에 해당하는 가격이 0 이상이면 판매로 등록되있다고 판단)
+        // 판매 중인 토큰만 구매할 수 있도록 판매 중인지 체크(tokenPrices에서 토큰 아이디에 해당하는 가격이 0 이상이면 판매로 등록돼있다고 판단)
         require(tokenPrices[_tokenId].price > 0);
 
         // 구매자가 지불한 ㅣㅇ더가 판매 가격 이상인지 체크
@@ -392,7 +394,7 @@ const Wheel_Contents_Wrap = styled.div`
 
 ```
 
-### 그리고 마이페이지에서 유저가 판매하는 전체 판매 리스트 확인
+### 마이페이지에서 유저가 판매하는 전체 판매 리스트 확인.
 
 ```Solidity
     // 전체 판매 리스트 확인, 전체 확인은 view를 사용해야 한다.
@@ -428,20 +430,53 @@ const Wheel_Contents_Wrap = styled.div`
 
 <br/>
 
-## 힘들었던점
+## 이슈발생
 
-- 메타마스크 연결(goerli)truffle-config.js의 설정 자체가 어려웠음.
+- 메타 마스크 연결(goerli) truffle-config.js의 설정 자체에서 시간분배 조절 실패.
+  
+  - 배포 단계까지는 설정 완료.
+  
+  ```JavaScript
+      goerli: {
+        provider: () =>
+          new HDWalletProvider({
+            mnemonic: {
+              phrase: MNEMONIC,
+            },
+            providerOrUrl: INFURA_API_KEY,
+          }),
+        network_id: 5,
+      },
+  ```
+  
+- 특정 testnet(goerli)에서만 메타 마스크 연결에서 시간 분배 실패.
 
-- 유저마다 3개씩 발행되게 컨트랙트를 구현해놨음
+  - 배포 단계까지는 설정 완료.
 
-```Solidity
+- 유저마다 3개씩 발행되게 컨트랙트를 구현.
+
+  ```Solidity
     // 유저마다 3개씩만 발급 받을 수 있게 차단
     require(buyer[msg.sender] < 3, "limit Excess");
-```
+  ```
+  
+  - 무슨 이유에선지 3개 차단은 되지만 다른 특정한 유저가 구매가 안되는 이슈가 발생.
+  
+  - 사용자 전체가 발급이 불가한 것은 아님.
+  
+  - 파악 후 해결하겠음.
+  
+- 프런트엔드 쪽 기능 부실.
 
-- 무슨 이유에선지 3개 차단은 되지만 다른 특정한 유저가 구매가 안돼는 이슈가 발생
+  - 전체적으로 NFT를 제외한다면 노출되는 재미가 감소.
+  
+  - 따라서 사용자의 흥미를 이끌 수 없게 됨.
+  
+  - 추후에 보완하여 프런트엔드 영역 확장하겠음
+  
+- pinata 자체 오류 발생(Abusive Behavior Detected)
 
-- 파악후 해결하겠음
+  - https://drive.google.com/drive/folders/1kXBw4_PiOE782xRcGMgqyrP3KLNqrxb1
 
 
 
