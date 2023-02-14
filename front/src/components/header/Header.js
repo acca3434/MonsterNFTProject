@@ -86,7 +86,7 @@ const Header = ({ isLogin, theme, setTheme, login }) => {
             }}
             style={{ cursor: "pointer" }}
           >
-            <img src="./images/rwd_logo.png" style={{ width: "70px" }} />
+            <img src="./images/page_logo.png" style={{ width: "70px" }} />
           </a>
         </div>
         <Box sx={{ width: "100%", marginLeft: "50px;" }}>
