@@ -17,6 +17,10 @@
   - Front View 와 메타마스크 연결작업.
 
   - 1부터 60까지 랜덤으로 민팅하는 기능작성.
+  
+  - 캐릭터 디자인 및 pinata를 이용한 이미지 메타데이터 생성
+  
+    - https://drive.google.com/drive/folders/1kXBw4_PiOE782xRcGMgqyrP3KLNqrxb1
 
 - **프론트엔드**
 
@@ -469,6 +473,10 @@ const Wheel_Contents_Wrap = styled.div`
   - 따라서 사용자의 흥미를 이끌 수 없게 됨.
   
   - 추후에 보완하여 프런트엔드 영역 확장하겠음
+  
+- pinata 자체 오류 발생(Abusive Behavior Detected)
+
+  - https://drive.google.com/drive/folders/1kXBw4_PiOE782xRcGMgqyrP3KLNqrxb1
 
 
 
