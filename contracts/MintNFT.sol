@@ -46,10 +46,10 @@ contract MintNFT is ERC721Enumerable, Ownable {
             "You've exceeded the value that you can mint per day"
         );
         require(buyer[msg.sender] < 3, "limit Excess");
-        // uint256 total = totalSupply() +1;
-        // uint256 tokenId = uint256(keccak256(abi.encodePacked(msg.sender,total,block.timestamp))) % 60;
-        // getRandomNum(tokenId);
-        // emit nftTokenList(msg.sender,tokenId);
+        uint256 total = totalSupply() +1;
+        uint256 tokenId = uint256(keccak256(abi.encodePacked(msg.sender,total,block.timestamp))) % 60;
+        getRandomNum(tokenId);
+        emit nftTokenList(msg.sender,tokenId);
         payable(Ownable.owner()).transfer(msg.value);
         _mint(msg.sender, tokenId);
         tokenId++;
@@ -63,6 +63,7 @@ contract MintNFT is ERC721Enumerable, Ownable {
     //     }
     //     tokenCount.pop();
     // }
+    // 민팅하기 위해서 필요한 URI들을 리턴
     function tokenURI(uint256 _tokenId)
         public
         view
@@ -73,7 +74,7 @@ contract MintNFT is ERC721Enumerable, Ownable {
         return
             string(abi.encodePacked(metadataURI, "/", _tokenIdString, ".json"));
     }
-
+    // 메타데이터의 주소값을 얻는 함수
     function setMetadataURI(string memory _uri) public {
         metadataURI = _uri;
     }
@@ -81,23 +82,23 @@ contract MintNFT is ERC721Enumerable, Ownable {
     function mint(uint256 _tokenId) public {
         _mint(msg.sender, _tokenId);
     }
-
+    // 민트 발행 자동화
     function mintArr(uint256 _tokenId) public {
         for (uint256 i = 1; i < _tokenId; i++) {
             _mint(msg.sender, i);
         }
     }
-
+    // 가지고 있는 토큰을 삭제하는것
     function burn(uint256 _tokenId) public {
         _burn(_tokenId);
     }
-
+    // 민트 발행의 삭제 자동화
     function burnArr(uint256 _tokenId) public {
         for (uint256 i = 1; i < _tokenId; i++) {
             _burn(i);
         }
     }
-
+    // 토큰의 발행 개수 확인하는 것
     function getTokenCount() public view returns (uint256[] memory) {
         return tokenCount;
     }
