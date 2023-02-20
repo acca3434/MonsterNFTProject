@@ -189,11 +189,8 @@ const Wheel_Contents_Wrap = styled.div`
   const login = async () => {
     try {
       const [_accounts] = await getAccounts();
-      console.log(_accounts);
       const web3 = new Web3(window.ethereum);
-      console.log(web3);
       const networkId = await web3.eth.net.getId();
-      console.log(networkId);
       const CA = MintNFT.networks[networkId].address;
       const _abi = MintNFT.abi;
       const Deployed = await new web3.eth.Contract(_abi, CA);
